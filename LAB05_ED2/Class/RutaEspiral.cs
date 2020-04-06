@@ -53,7 +53,7 @@ namespace LAB05_ED2.Class
             }
         }//End method for spiral
 
-        public void againstspiral(string rpath, string wpath, int rows)
+        public void Vertical(string rpath, string wpath, int rows)
         {
             int columns = 0;
             using (var file = new FileStream(wpath, FileMode.OpenOrCreate))
@@ -103,7 +103,7 @@ namespace LAB05_ED2.Class
                     }
                 }
             }
-        }//End method for again spiral
+        }//End method for vertical
 
         public void DecryptSpiral(string rPath, string wPath, int key)
         {
@@ -129,13 +129,13 @@ namespace LAB05_ED2.Class
         }//End method for decrypt spiral
 
 
-        public void DecryptAgainstSpiral(string rPath, string wPath, int key)
+        public void DecryptVertical(string rPath, string wPath, int key)
         {
             using (var file = new FileStream(@wPath, FileMode.OpenOrCreate))
             {
                 using (var writer = new BinaryWriter(file))
                 {
-                    char[,] data = FASpiral(rPath, key);
+                    char[,] data = FVertical(rPath, key);
                     int rows = data.Length / key;
                     int columns = key;
                     for (int i = 0; i < columns; i++)
@@ -150,7 +150,7 @@ namespace LAB05_ED2.Class
                     }
                 }
             }
-        }//End method for decrypt again spiral
+        }//End method for decrypt vertical
 
 
         //END PUBLIC FUNCTIONS
@@ -188,7 +188,7 @@ namespace LAB05_ED2.Class
         }//End method for fell the array
 
 
-        private char[,] FASpiral(string rPath, int rows)
+        private char[,] FVertical(string rPath, int rows)
         {
             char[,] mander;
             int columns;
@@ -254,7 +254,7 @@ namespace LAB05_ED2.Class
 
             }
             return mander;
-        }//End method for fell again spiral in array
+        }//End method for fell vertical in array
 
         private char[,] FSpiral(string rPath, int rows)
         {

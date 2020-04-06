@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using LAB05_ED2.Repository;
 
 namespace LAB05_ED2
 {
@@ -26,6 +27,7 @@ namespace LAB05_ED2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSingleton<IMethod, Method>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
